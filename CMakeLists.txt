@@ -1013,6 +1013,7 @@ if (BUILD_PYTHON)
   elseif (UNIX OR APPLE)
     if (Caffe_FOUND)
       execute_process(COMMAND git submodule update --init ${CMAKE_SOURCE_DIR}/3rdparty/pybind11/)
+      execute_process(COMMAND git checkout ff78085 WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/3rdparty/pybind11)
       # execute_process(COMMAND git submodule update --init --recursive --remote) # This would initialize them all
       add_subdirectory(3rdparty/pybind11)
       add_subdirectory(python)
