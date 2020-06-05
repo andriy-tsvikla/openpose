@@ -3,4 +3,4 @@
 	url = https://github.com/andriy-tsvikla/caffe.git
 [submodule "3rdparty/pybind11"]
 	path = 3rdparty/pybind11
-	url = https://github.com/pybind/pybind11.git
+	url = https://github.com/andriy-tsvikla/pybind11.git
