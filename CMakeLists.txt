@@ -266,7 +266,7 @@ endif (PROFILER_ENABLED)
 # Suboptions for GPU architectures
 if (${GPU_MODE} MATCHES "CUDA")
   set(CUDA_ARCH Auto CACHE STRING "Select target NVIDIA GPU achitecture.")
-  set_property(CACHE CUDA_ARCH PROPERTY STRINGS "Turing (CUDA >= 10)")
+  set_property(CACHE CUDA_ARCH PROPERTY STRINGS Auto All Manual)
 endif (${GPU_MODE} MATCHES "CUDA")
 
 # Suboptions for acceleration library
