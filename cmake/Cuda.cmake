@@ -111,6 +111,8 @@ function(op_select_nvcc_arch_flags out_variable)
     string(REPLACE ";" ", " __archs_names "${__archs_names}")
     message(FATAL_ERROR "Only ${__archs_names} architeture names are supported.")
   endif ()
+  
+  set (CUDA_ARCH "Turing (CUDA >= 10)")
   message(STATUS "CUDA_ARCH ${CUDA_ARCH}.")
   if (${CUDA_ARCH} STREQUAL "Manual")
     set(CUDA_ARCH_BIN ${Caffe_known_gpu_archs} CACHE STRING "Specify 'real' GPU architectures to build binaries for, BIN(PTX) format is supported")
