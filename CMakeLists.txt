@@ -259,9 +259,9 @@ if (${USE_MKL})
 endif (${USE_MKL})
 
 # Set/disable profiler
-#if (PROFILER_ENABLED)
+if (PROFILER_ENABLED)
   add_definitions(-DPROFILER_ENABLED)
-#endif (PROFILER_ENABLED)
+endif (PROFILER_ENABLED)
 
 # Suboptions for GPU architectures
 if (${GPU_MODE} MATCHES "CUDA")
