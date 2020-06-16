@@ -155,7 +155,7 @@ namespace op
             #ifdef USE_CAFFE
                 // Initialize net
                 #ifdef USE_OPENCL
-                    op::opLog("Starting Forward_gpu USE_CAFFE USE_OPENCL", op::Priority::High);
+                    op::opLog("NetCaffe::initializationOnThread() USE_CAFFE USE_OPENCL", op::Priority::High);
                     caffe::Caffe::set_mode(caffe::Caffe::GPU);
                     caffe::Caffe::SelectDevice(upImpl->mGpuId, true);
                     upImpl->upCaffeNet.reset(new caffe::Net<float>{upImpl->mCaffeProto, caffe::TEST,
@@ -164,7 +164,7 @@ namespace op
                     OpenCL::getInstance(upImpl->mGpuId, CL_DEVICE_TYPE_GPU, true);
                 #else
                     #ifdef USE_CUDA
-                        op::opLog("Starting Forward_gpu USE_CAFFE USE_CUDA", op::Priority::High);
+                        op::opLog("NetCaffe::initializationOnThread() USE_CAFFE USE_CUDA", op::Priority::High);
                         caffe::Caffe::set_mode(caffe::Caffe::GPU);
                         caffe::Caffe::SetDevice(upImpl->mGpuId);
                         #ifdef NV_CAFFE
